@@ -1,3 +1,34 @@
+const addButton = document.getElementById('addMoney');
+const getButton = document.getElementById('getMoney');
+const bankAccont = {
+    ownerName: "Egor",
+    accountNumber: 9929,
+    balance: 8000,
+    deposit: 5000,
+    get: 1000,
+    addMoneyButton() {
+        addButton.addEventListener('click', (event) => {
+            bankAccont.balance = bankAccont.balance + bankAccont.deposit
+            console.log(bankAccont.balance)
+        })
+    },
+    getMoneyButton() {
+        getButton.addEventListener('click', (event) => {
+            bankAccont.balance = bankAccont.balance - bankAccont.get
+            if (bankAccont.balance <= 0) {
+                console.log("На рахунку вистачає грошей")
+            }
+            console.log(bankAccont.balance)
+        })
+    }
+}
+bankAccont.addMoneyButton()
+bankAccont.getMoneyButton()
+
+const { ownerName, accountNumber, deposit, balance  } = bankAccount;
+console.log(ownerName, accountNumber, deposit, balance );
+
+
 const user = {
     name: 'Jack',
     hobby: 'playing',
